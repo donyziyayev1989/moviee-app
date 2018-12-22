@@ -1,0 +1,28 @@
+.pagination{
+	text-align: center;
+	list-style-type: none;
+	margin-bottom: 30px;
+	li{
+		display: inline-block;
+		a{
+			display: block;
+			padding: 6px 12px;
+			border: 1px solid transparent;
+			outline: none;
+			cursor: pointer;
+			
+		}
+		&.active{
+			a{
+				border-color: #777;
+				cursor: text;
+			}
+		}
+		&.disabled{
+			a{
+				cursor: text;
+				color:#aaa;
+			}
+		}
+	}
+}
