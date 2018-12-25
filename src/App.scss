@@ -33,5 +33,15 @@ body{
 	margin-right: auto;
 	padding-left: 15px;
 	padding-right: 15px;
-	@include clearfix
+	@include clearfix;
 }
+.flexbox{
+	display: flex;
+}
+.mb-30{
+	margin-bottom: 30px;
+}
+.page-title{
+	font-size: 26px;
+	margin-bottom: 30px;
+}	

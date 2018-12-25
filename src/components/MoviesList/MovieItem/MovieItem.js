@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-import Spinner from '../../UI/Spinner/Spinner'
+// import Spinner from '../../UI/Spinner/Spinner'
 
 import './MovieItem.scss';
 
@@ -16,7 +16,6 @@ const movie = (props) => {
 		poster = <img className="poster" alt={props.title} src={`https://image.tmdb.org/t/p/w300${props.poster_path}`} />
 	} 
 
-	console.log(props.poster_path)
 	return ( 
 		<div className="col col2">
 			<div className="MovieItem" id={props.id}>
@@ -28,7 +27,7 @@ const movie = (props) => {
 			    <div className="MovieItem__info">
 			        <div className="wrapper">
 			            <div className="rating">
-							<div className="rating__inner">{props.vote_average}	</div>
+							<div className="rating__inner" title="Average votes based on IMDB">{props.vote_average}	</div>
 			            </div>
 			            <div className="MovieItem__title">
 			                <Link id={props.id} className="title" to={"/movie/" + props.id} title={props.title} alt={props.title}>{props.title}</Link>

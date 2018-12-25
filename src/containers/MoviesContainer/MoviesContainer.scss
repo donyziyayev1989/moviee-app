@@ -10,12 +10,14 @@
 			border: 1px solid transparent;
 			outline: none;
 			cursor: pointer;
-			
+			text-decoration: none;
+			color:#000;
 		}
 		&.active{
 			a{
 				border-color: #777;
 				cursor: text;
+				
 			}
 		}
 		&.disabled{

@@ -3,7 +3,8 @@ import {Route, Switch} from 'react-router-dom';
 
 import MoviesContainer from './containers/MoviesContainer/MoviesContainer';
 import MovieContainer from './containers/MovieContainer/MovieContainer';
-import Layout from './hoc/Layout/Layout'
+import Layout from './hoc/Layout/Layout';
+
 
 
 import './App.scss';
@@ -15,8 +16,8 @@ class App extends Component {
       <div className="App">
         <Layout>
         	<Switch>
-        		<Route path="/movie/:id" component={MovieContainer}/>
-      			<Route path="/" exact component={MoviesContainer}/>
+        		<Route path="/movie/:id" render={(props) => <MovieContainer {...props} />}/>
+      			<Route path="/movies" component={MoviesContainer}/>
         	</Switch>
         </Layout>
       </div>

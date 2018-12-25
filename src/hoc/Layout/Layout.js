@@ -7,7 +7,7 @@ class Layout extends React.Component {
     return (
       <Wrap>
       	<Navigation />
-      	<main className="mainContent container">
+      	<main className="mainContent">
       		{this.props.children}
       	</main>
       </Wrap>
