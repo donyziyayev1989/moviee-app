@@ -1,12 +1,10 @@
 import React from 'react';
 import axios from '../../../axios-instanse'
-
 import ReactPaginate from 'react-paginate';
-import {withRouter} from 'react-router'
 import MoviesList from '../../../components/MoviesList/MoviesList';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import Wrap from '../../../hoc/Wrap/Wrap';
-
+import View from '../../../components/UI/View/View'
 
 
 class DefaultMovieList extends React.Component {
@@ -87,7 +85,8 @@ class DefaultMovieList extends React.Component {
 		      			onPageChange={this.onPageChangeHandler} />;
 
 		wrapper = (<Wrap>
-					<h2 className="page-title">Recently added movies</h2>
+
+					
 					{pagination}
 					<MoviesList movies={this.state.movies} />
 					{pagination}
@@ -97,6 +96,11 @@ class DefaultMovieList extends React.Component {
 	
     return (
 		<div className="container">
+			<div className="head clearfix">
+				<h2 className="page-title fl-left">Recently added movies</h2>
+				<View/>
+			</div>
+
 			{wrapper}
 		</div>
     )

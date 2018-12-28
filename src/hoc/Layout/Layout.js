@@ -1,6 +1,7 @@
 import React from 'react';
 import Wrap from '../Wrap/Wrap';
-import Navigation from '../../components/Navigation/Navigation'
+import Navigation from '../../components/Navigation/Navigation';
+import Footer from '../../components/Footer/Footer'
 
 class Layout extends React.Component {
   render() {
@@ -10,6 +11,7 @@ class Layout extends React.Component {
       	<main className="mainContent">
       		{this.props.children}
       	</main>
+       <Footer />
       </Wrap>
     );
   }

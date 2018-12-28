@@ -6,7 +6,7 @@ import NavItem from './NavItem/NavItem'
 
 const navigation = (props) => {
 	return (
-		<nav className="nav">
+		<header className="site-header">
 			<div className="container">
 				<div className="logo-wrap">
 					<Logo />
@@ -15,16 +15,16 @@ const navigation = (props) => {
 					<ul className="nav-menu">
 						<NavItem to="/movies" text="Films">
 							<ul>
-								<NavItem to="/movies/now_playing" text="now_playing"></NavItem>
-								<NavItem to="/movies/popular" text="popular"></NavItem>
-								<NavItem to="/movies/top_rated" text="top_rated"></NavItem>
-								<NavItem to="/movies/upcoming" text="upcoming"></NavItem>
+								<NavItem to="/movies/now_playing" text="Now playing"></NavItem>
+								<NavItem to="/movies/popular" text="Popular"></NavItem>
+								<NavItem to="/movies/top_rated" text="Top rated"></NavItem>
+								<NavItem to="/movies/upcoming" text="Upcoming"></NavItem>
 							</ul>
 						</NavItem>
 					</ul>
 				</div>
 			</div>
-		</nav>
+		</header>
 	)
 }
 

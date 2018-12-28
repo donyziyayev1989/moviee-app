@@ -89,3 +89,15 @@
 		color:#333;
 	}
 }
+.compact{
+	
+	.MovieItem{
+		display: block;
+	}
+	.MovieItem__image{
+		width: 100%;
+	}
+	.MovieItem__info{
+		padding: 5px;
+	}
+}

@@ -38,7 +38,7 @@
 	}
 	.image_content{
 		min-width: 300px;
-		min-height: 100%;
+		min-height: 450px;
 		position: relative;
 		
 		.loader{
@@ -69,7 +69,8 @@
 	}
 }
 .movie_name{
-	display: inline-block;
+	display: inline;
+	margin-right: 10px;
 	
 }
 @media screen and (max-width: 767px) {

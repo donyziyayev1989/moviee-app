@@ -5,7 +5,7 @@ import ReactPaginate from 'react-paginate';
 import MoviesList from '../../../components/MoviesList/MoviesList';
 import Spinner from '../../../components/UI/Spinner/Spinner';
 import Wrap from '../../../hoc/Wrap/Wrap';
-
+import View from '../../../components/UI/View/View'
 
 class MoviesContainer extends React.Component {
 	state = {
@@ -101,7 +101,6 @@ class MoviesContainer extends React.Component {
 		      			onPageChange={this.onPageChangeHandler} />;
 
 		wrapper = (<Wrap>
-					<h2 className="page-title">{this.getTitle(this.props.match.params.list).title}</h2>
 					{pagination}
 					<MoviesList movies={this.state.movies} />
 					{pagination}
@@ -111,6 +110,11 @@ class MoviesContainer extends React.Component {
 	
     return (
 		<div className="container">
+			<div className="head clearfix">
+				<h2 className="page-title">{this.getTitle(this.props.match.params.list).title}</h2>
+				<View/>
+			</div>
+
 			{wrapper}
 		</div>
     )

@@ -22,7 +22,7 @@ const header = (props) => {
 	
 	let poster = <div className="image_content"> <Spinner size="small" theme="light"/></div>
 
-	if (!loading) {
+	if (poster_path) {
 		poster = <div className="image_content">
   		        	<img className="poster" src={'https://image.tmdb.org/t/p/w300_and_h450_bestv2/'+ poster_path} alt={title} /> 
   	            </div>
@@ -85,7 +85,6 @@ const header = (props) => {
 				              </ol>
 				            </div>)
 						}
-		              
 		            </div>
 		          </section>
 		        </div>

@@ -1,0 +1,45 @@
+.fact_item{
+	margin-bottom: 10px;
+	h5{
+		display: inline-block;
+		margin-right: 10px;
+
+		&:after{
+			content: " : ";
+			display: inline-block;
+			margin-left: 5px;
+		}
+	}
+	p{
+		display: inline-block;
+		
+	}
+	.company{
+		display: inline-block;
+		&:after{
+			content: ", ";
+			display: inline;
+		}
+		margin-right: 5px;
+		&:last-child {
+			&:after{
+				display: none;
+				
+			}
+		}
+	}
+}
+.tag{
+	cursor: pointer;
+	display: inline-block;
+	border: 1px solid  #ccc;
+	background: #fff;
+	padding: 5px 10px;
+	border-radius: 3px;
+	text-decoration: none;
+	color:#333;
+	margin-right: 10px;
+	&:focus, &:hover{
+		background: #ccc
+	}
+}
