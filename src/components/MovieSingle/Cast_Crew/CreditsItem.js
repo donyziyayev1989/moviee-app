@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom'
 
 
 const creditsItem = (props) => {
@@ -20,9 +21,9 @@ const creditsItem = (props) => {
 		
 	return (
 		<div className="flexbox credit">
-			<a href="link" className="credit__img">{imgSrc}</a>
+			<Link to="/link" className="credit__img">{imgSrc}</Link>
 			<div className="credit__info">
-				<a href="link" className="credit__name">{props.name}</a>
+				<Link to="link" className="credit__name">{props.name}</Link>
 				<p>{props.extra}</p>
 			</div>
 		</div>

@@ -15,13 +15,17 @@ const nav = (props) => {
 						<NavLink to={`${URL}/cast_crew`}>Full Cast & Crew</NavLink>
 					</li>
 					<li>
-						<NavLink to={`${URL}/backdrops`}>Images</NavLink>
+						<NavLink to={`${URL}/images/backdrops`}>Images</NavLink>
 						<ul>
 							<li>
-								<NavLink to={`${URL}/images/backdrops`}>Backdrops</NavLink>
+								<NavLink to={`${URL}/images/backdrops`}>
+									Backdrops
+								</NavLink>
 							</li>
 							<li>
-								<NavLink to={`${URL}/images/posters`}>Poster</NavLink>
+								<NavLink to={`${URL}/images/posters`}>
+									Posters
+								</NavLink>
 							</li>
 						</ul>
 					</li>

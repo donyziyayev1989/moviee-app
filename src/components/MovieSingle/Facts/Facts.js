@@ -8,7 +8,6 @@ function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 const facts = (props) => {
-	console.log(props)
 	if (props.runtime) {
 		var runtime_days = (props.runtime / (24*60)).toFixed(0);
 		var runtime_hours = ((props.runtime - runtime_days * 24) / 60).toFixed(0);

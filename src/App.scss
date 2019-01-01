@@ -37,6 +37,31 @@ body{
 }
 .flexbox{
 	display: flex;
+	.row{
+		flex-wrap: wrap;
+		display: flex;
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+	.col{
+		margin-bottom: 30px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.col2{
+		flex-basis: 50%;
+		width: 50%;
+	}
+	.col4{
+		width: 25%;
+		flex-basis: 25%;
+	}
+	@media screen and (max-width: 767px) {
+		.col4{
+			width: 50%;
+			flex-basis: 50%;
+		}
+	}
 }
 .mb-30{
 	margin-bottom: 30px;
@@ -45,12 +70,18 @@ body{
 	font-size: 26px;
 	margin-bottom: 30px;
 }	
-
+.img-full{
+	width: 100%;
+	height: auto;
+	display: block;
+	
+}
 .navigation{
 	border-top: 1px solid #d7d7d7;
 	border-bottom: 1px solid #d7d7d7;
 	.nav{
 		list-style-type: none;
+		z-index: 10;
 		li{
 			a{
 				display: block;
@@ -83,9 +114,29 @@ body{
 		>li{
 			display: inline-block;
 			margin-right: 30px;
+			position: relative;
+			
+			&:hover, &:focus{
+				ul{
+					display: block;
+				}
+			}
 			ul{
 				display: none;
-				
+				list-style-type: none;
+				position: absolute;
+				box-shadow: 0 1px 2px #999;
+				z-index: 10;
+				background: white;
+				top: 100%;
+				left: 0;
+				a:hover, a:focus, a.active{
+					background: rgba(0,0,0,.1);
+					&:after{
+						display: none;
+						
+					}
+				}
 			}
 		}
 	}
@@ -93,7 +144,10 @@ body{
 .tab-content{
 	padding-top: 15px;
 	padding-bottom: 20px;
-
+	h3{
+		text-transform: capitalize;
+		
+	}
 }
 .mb-20{
 	margin-bottom: 20px;

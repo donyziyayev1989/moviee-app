@@ -1,13 +1,12 @@
-import React from 'react';
+import React, {Fragment, Component} from 'react';
 import axios from '../../../axios-instanse'
 import ReactPaginate from 'react-paginate';
 import MoviesList from '../../../components/MoviesList/MoviesList';
 import Spinner from '../../../components/UI/Spinner/Spinner';
-import Wrap from '../../../hoc/Wrap/Wrap';
 import View from '../../../components/UI/View/View'
 
 
-class DefaultMovieList extends React.Component {
+class DefaultMovieList extends Component {
 	state = {
 		movies: null,
 		pageCount: 0,
@@ -84,13 +83,13 @@ class DefaultMovieList extends React.Component {
 		      			hrefBuilder={this.hrefBuilder}
 		      			onPageChange={this.onPageChangeHandler} />;
 
-		wrapper = (<Wrap>
+		wrapper = (<Fragment>
 
 					
 					{pagination}
 					<MoviesList movies={this.state.movies} />
 					{pagination}
-				</Wrap>)
+				</Fragment>)
 		
 	}
 	

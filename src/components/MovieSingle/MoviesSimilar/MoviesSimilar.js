@@ -28,12 +28,10 @@ class MoviesSimilar extends React.Component {
 					movies: data.results,
 					loading: false
 				})
-				console.log(data)
 			})
 			.catch( err => {
 				this.setState({error:err,loading:false})
 			})
-		// console.log(this.props)
 	}
 
   render() {
