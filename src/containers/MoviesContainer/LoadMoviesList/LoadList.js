@@ -11,7 +11,9 @@ class MoviesContainer extends Component {
 		movies: null,
 		pageCount: 0,
 		initialPage:0,
-		currentPage: 1
+		currentPage: 1,
+		cols:2,
+		view:'poster'
 	}
 	componentWillMount() {
 		const query = new URLSearchParams( this.props.location.search );
@@ -21,12 +23,13 @@ class MoviesContainer extends Component {
 		 }
 		
 		// After hard refresh or entering url by hand will render proper page
-		const page = data.page == undefined ? 1 : data.page;
+		const page = data.page === undefined ? 1 : data.page;
 		this.setState({
 			currentPage: page,
 		})
 		
 	}
+
 
 	componentWillReceiveProps(newProps) {
 		if (this.props.match.params.list !== newProps.match.params.list) {
@@ -39,9 +42,14 @@ class MoviesContainer extends Component {
 
 	}
 
+	// componentDidUpdate(prevProps, prevState) {
+	// 	if(prevState.cols !== this.state.cols) {
+			
+	// 	}
+	// }
+
 	componentDidMount() {
 		this.fetchData(this.props.match.params.list, this.state.currentPage);
-		console.log(this.props)
 	}
 	
 	fetchData = function(list, currentPage) {
@@ -59,8 +67,14 @@ class MoviesContainer extends Component {
 	        console.log('Fetch Error :-S', err);
 	      })
 	}
-
 	
+	// Changing views of movies
+	changeColumnsHandler = (col) => {
+		this.setState({cols: col});
+	}
+	changeViewHandler = (view) => {
+		this.setState({view: view});
+	}
 
 	// Update pagination active state
 	onPageChangeHandler = (page) => {
@@ -101,7 +115,7 @@ class MoviesContainer extends Component {
 
 		wrapper = (<Fragment>
 					{pagination}
-					<MoviesList movies={this.state.movies} />
+					<MoviesList movies={this.state.movies} columns={this.state.cols} view={this.state.view} />
 					{pagination}
 				</Fragment>)
 		
@@ -111,7 +125,7 @@ class MoviesContainer extends Component {
 		<div className="container">
 			<div className="head clearfix">
 				<h2 className="page-title">{this.getTitle(this.props.match.params.list).title}</h2>
-				<View/>
+				<View onChangeColumns={this.changeColumnsHandler} onChangeView={this.changeViewHandler} />
 			</div>
 
 			{wrapper}

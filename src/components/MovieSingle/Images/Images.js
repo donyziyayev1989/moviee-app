@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom'
 import axios from '../../../axios-instanse.js';
 import Spinner from '../../UI/Spinner/Spinner'
 import './Images.scss'
@@ -55,7 +56,6 @@ class Images extends Component {
 							<div className="movie-img">
 								<a href={`${URL}/original/${img.file_path}`} target="_blank">
 									<img src={`${URL}/${width}/${img.file_path}`} alt="" className="img-full"/>
-									
 								</a>
 								<div className="info">
 									Size: {img.width} x {img.height}

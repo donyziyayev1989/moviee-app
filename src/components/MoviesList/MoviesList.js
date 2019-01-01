@@ -6,7 +6,6 @@ import './MoviesList.scss'
 class Movies extends React.Component {
 
 	render() {
-
 		return (
 			<Wrap>
 				<div className="MoviesWrap" >
@@ -15,16 +14,21 @@ class Movies extends React.Component {
 							id,
 							title,
 							poster_path,
+							backdrop_path,
 							release_date,
 							overview,
 							vote_average
 						} = movie;
 						
 				  		return (
-							<MovieItem key={index} column="2" 
+							<MovieItem 
+								key={index} 
+								column={this.props.columns} 
+								view={this.props.view}
 								id={id}
 								title={title}
 								poster_path={poster_path}
+								backdrop_path={backdrop_path}
 								release_date={release_date}
 								overview={overview}
 								vote_average={vote_average}

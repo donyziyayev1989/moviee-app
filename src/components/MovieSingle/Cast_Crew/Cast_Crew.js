@@ -2,7 +2,7 @@ import React from 'react'
 
 import CreditsItem from './CreditsItem'
 
-import classes from './Cast_Crew.scss'
+import './Cast_Crew.scss'
 
 
 
@@ -16,7 +16,7 @@ const casts = ({credits}) => {
 	const departments = {};
 	const departmentList = [];
 
-	crewList.map((item) => {
+	crewList.forEach((item) => {
 	  if (!departments.hasOwnProperty(item.department)) {
 	  	departments[item.department] = []
 	  }

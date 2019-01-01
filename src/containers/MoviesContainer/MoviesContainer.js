@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'
-// import Spinner from '../../components/UI/Spinner/Spinner';
 
 import './MoviesContainer.scss'
 

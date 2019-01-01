@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Route } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const nav = (props) => { 
 
@@ -28,6 +28,11 @@ const nav = (props) => {
 								</NavLink>
 							</li>
 						</ul>
+					</li>
+					<li>
+						<NavLink to={`${URL}/videos`}>
+							Videos
+						</NavLink>
 					</li>
 					<li>
 						<NavLink to={`${URL}/similar`}>Similar Movies</NavLink>

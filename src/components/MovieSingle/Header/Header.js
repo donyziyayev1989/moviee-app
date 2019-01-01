@@ -12,8 +12,7 @@ const header = (props) => {
 		credits,
 		release_date,
 		overview,
-		production_countries,
-		loading
+		production_countries
 	} = props;
 	
 	const bgImgSrc = 'https://image.tmdb.org/t/p/w1400_and_h450_face/'+ backdrop_path;

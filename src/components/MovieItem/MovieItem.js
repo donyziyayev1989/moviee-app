@@ -10,11 +10,20 @@ import './MovieItem.scss';
 const movie = (props) => { 
 
 	// let poster = <Spinner size="small" />
-	let poster = <img className="poster" alt={props.title} src="http://via.placeholder.com/300x450" />
+	let poster = <img className="poster" alt={props.title} src="http://via.placeholder.com/300x450?text=No Image" />
 	
-	if (props.poster_path) {
+	if (props.poster_path && (props.view === "poster" || props.view === "compact")) {
 		poster = <img className="poster" alt={props.title} src={`https://image.tmdb.org/t/p/w300${props.poster_path}`} />
-	} 
+	}
+
+	if ( props.view === "backdrop") {
+		poster = <img className="poster" alt={props.title} src="http://via.placeholder.com/500x282?text=No Image" />
+
+		if (props.backdrop_path ) {
+			poster = <img className="poster" alt={props.title} src={`https://image.tmdb.org/t/p/w500${props.backdrop_path}`} />
+		}
+		
+	}
 
 	let classes = ["col"]
 	
@@ -40,11 +49,30 @@ const movie = (props) => {
 	if (props.view === "compact") {
 		movieInfo = <div className="MovieItem__info">
 	        <div className="wrapper">
+	        	<div className="clearfix showOnHover">
+	        		<span className="date fl-left">{props.release_date}</span>
+					<div className="rating fl-right">
+						<div className="rating__inner" title="Average votes based on IMDB">{props.vote_average}	</div>
+		            </div>
+	        	</div>
 	            <div className="MovieItem__title">
 	                <Link id={props.id} className="title" to={"/movie/" + props.id} title={props.title} alt={props.title}>{props.title}</Link>
 	            </div>
 	        </div>
 	    </div>
+	}
+	if (props.view === "backdrop") {
+		movieInfo = <div className="MovieItem__info">
+			        <div className="wrapper">
+			            <div className="rating">
+							<div className="rating__inner" title="Average votes based on IMDB">{props.vote_average}	</div>
+			            </div>
+			            <div className="MovieItem__title">
+			                <Link id={props.id} className="title" to={"/movie/" + props.id} title={props.title} alt={props.title}>{props.title}</Link>
+			                <span className="date">{props.release_date}</span>
+			            </div>
+			        </div>
+			    </div>
 	}
 
 	return ( 

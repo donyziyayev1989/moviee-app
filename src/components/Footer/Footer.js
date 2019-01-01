@@ -1,12 +1,13 @@
 import React from 'react'
 
-import classes from './Footer.scss'
+import './Footer.scss'
 
 const footer = (props) => {
 	return (
 		<footer className="siteFooter">
           <div className="container">
-			<h1>Footer</h1>
+			<h3>React Movie App</h3>
+			<div className="copyright">Created by <a href="https://www.linkedin.com/in/doniyor-ziyayev-0a53a0a9/">Doniyor Ziyayev</a></div>
           </div>
         </footer>
 	)

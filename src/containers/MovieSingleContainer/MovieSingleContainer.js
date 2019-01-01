@@ -1,6 +1,6 @@
 import React, { Fragment, Component} from 'react';
 import axios from '../../axios-instanse';
-import { Route, Switch, Link, Redirect } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import Header from '../../components/MovieSingle/Header/Header';
 import Nav from '../../components/MovieSingle/Nav/Nav'
 
@@ -9,10 +9,10 @@ import Spinner from '../../components/UI/Spinner/Spinner';
 
 // Routes
 import Facts from '../../components/MovieSingle/Facts/Facts'
-import Cast_Crew from '../../components/MovieSingle/Cast_Crew/Cast_Crew'
+import CastCrew from '../../components/MovieSingle/Cast_Crew/Cast_Crew'
 import MoviesSimilar from '../../components/MovieSingle/MoviesSimilar/MoviesSimilar'
 import Images from '../../components/MovieSingle/Images/Images'
-
+import Videos from '../../components/MovieSingle/Videos/Videos'
 
 class MovieSingleContainer extends Component {
 
@@ -69,15 +69,11 @@ class MovieSingleContainer extends Component {
 				backdrop_path,
 				poster_path,
 				credits,
-				genres,
 				release_date,
 				overview,
 				production_countries
 			} = this.state.movie;
 
-			const facts = {
-
-			}
 
 			page = (
 				<Fragment>
@@ -103,7 +99,7 @@ class MovieSingleContainer extends Component {
 									render={(props) => <Facts {...this.state.movie} />} />
 								<Route 
 									path={`${URL}/cast_crew`} 
-									render={(props) => <Cast_Crew credits={credits} />} />
+									render={(props) => <CastCrew credits={credits} />} />
 								<Route 
 									path={`${URL}/similar`} 
 									render={() => <MoviesSimilar title="Similar Movies" id={this.props.match.params.id} /> }/>
@@ -113,6 +109,9 @@ class MovieSingleContainer extends Component {
 								<Route 
 									path={`${URL}/images/posters`} 
 									render={(props) => <Images id={id} type="posters" {...this.props} />} />
+								<Route 
+									path={`${URL}/videos`} 
+									render={(props) => <Videos id={id} {...this.props} />} />
 							</Switch>
 						</div>
 
