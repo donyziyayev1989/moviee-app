@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import { Link } from 'react-router-dom'
 import axios from '../../../axios-instanse.js';
 import Spinner from '../../UI/Spinner/Spinner'
 import './Images.scss'
@@ -38,11 +37,11 @@ class Images extends Component {
 	render() {
 		let page = <Spinner size="small" />
 		const URL = 'http://image.tmdb.org/t/p/'
-		let classes = "col col2";
+		let classes = "backdrop col col2";
 		let width = "w500";
 
 		if (this.props.type === "posters") {
-			classes = "col col4";
+			classes = "poster col col4";
 			width = "w342";
 		}
 		if (this.state.images) {

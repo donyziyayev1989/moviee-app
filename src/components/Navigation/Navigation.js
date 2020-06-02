@@ -13,10 +13,10 @@ const navigation = (props) => {
 				</div>
 				<div className="menu">
 					<ul className="nav-menu">
-						<NavItem to="/movies" text="Films">
+						<NavItem to="/movies/popular" text="Movies">
 							<ul>
-								<NavItem to="/movies/now_playing" text="Now playing"></NavItem>
 								<NavItem to="/movies/popular" text="Popular"></NavItem>
+								<NavItem to="/movies/now_playing" text="Now playing"></NavItem>
 								<NavItem to="/movies/top_rated" text="Top rated"></NavItem>
 								<NavItem to="/movies/upcoming" text="Upcoming"></NavItem>
 							</ul>

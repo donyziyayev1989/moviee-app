@@ -9,7 +9,7 @@ class View extends Component {
 	}
 
 	onChangeColumnsHandler = (event) => {
-		this.props.onChangeColumns(+event.target.value);
+		this.props.onChangeColumns(event.target.value);
 		this.setState({cols:+event.target.value})
 	}
 

@@ -25,28 +25,25 @@ class MoviesContainer extends Component {
 		// After hard refresh or entering url by hand will render proper page
 		const page = data.page === undefined ? 1 : data.page;
 		this.setState({
-			currentPage: page,
+			currentPage: page
 		})
 		
 	}
 
 
-	componentWillReceiveProps(newProps) {
-		if (this.props.match.params.list !== newProps.match.params.list) {
+	componentDidUpdate(prevProps) {
+		if (this.props.match.params.list !== prevProps.match.params.list) {
 			// If changes location We should change currenPage
-			this.fetchData(newProps.match.params.list, 1);
+			this.fetchData(this.props.match.params.list, 1);
 			this.setState({
 				currentPage:1
-			})
+			});
+
 		}
 
 	}
 
-	// componentDidUpdate(prevProps, prevState) {
-	// 	if(prevState.cols !== this.state.cols) {
-			
-	// 	}
-	// }
+
 
 	componentDidMount() {
 		this.fetchData(this.props.match.params.list, this.state.currentPage);

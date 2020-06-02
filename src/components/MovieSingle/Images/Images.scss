@@ -1,7 +1,22 @@
+
 .movie-img{
 	position: relative;
 	overflow: hidden;
-	
+	>a{
+		display: block;
+		width: 100%;
+		position: relative;
+		background: url(../../../assets/loading2.gif) 50% no-repeat;
+		background-size: 50px 50px;
+		>img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+
+		}
+	}
 	.info{
 		position: absolute;
 		transform:translateY(100%);
@@ -18,6 +33,20 @@
 	&:hover, &:focus{
 		.info{
 			transform:translateY(0);
+		}
+	}
+}
+.poster{
+	.movie-img{
+		>a{
+			padding-top: 150%;
+		}
+	}
+}
+.backdrop{
+	.movie-img{
+		>a{
+			padding-top: 56.25%;
 		}
 	}
 }
